@@ -1,0 +1,155 @@
+:root {
+  --primary-color: #2f4f4f;
+  --secondary-color: #56bbbb;
+  --background-color: #191d20;
+  --text-color: #f8f9fa;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --hover-glow: rgba(86, 187, 187, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+#root {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  height: 12em; /* Logo büyütüldü */
+  padding: 1.5em;
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 0 1rem var(--shadow-color));
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(2deg);
+  filter: drop-shadow(0 0 1.5rem var(--hover-glow));
+}
+
+h1 {
+  font-size: 3.5em;
+  margin: 0.5rem 0;
+  color: var(--secondary-color);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+h1:hover {
+  text-shadow: 4px 4px 8px var(--hover-glow);
+  letter-spacing: 2px;
+  transform: scale(1.05);
+}
+
+.info {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding: 0 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 8px;
+}
+
+.info:hover {
+  background-color: rgba(47, 79, 79, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+button {
+  padding: 1.2em 2.4em;
+  font-size: 1.2em;
+  font-weight: 600;
+  background: var(--secondary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(86, 187, 187, 0.3);
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+button:hover {
+  background: #6fd5d5;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(86, 187, 187, 0.5);
+}
+
+button:hover:before {
+  left: 100%;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.8em;
+  }
+  
+  .logo {
+    height: 9em; /* Mobilde de büyük kalacak şekilde ayarlandı */
+  }
+  
+  .info {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .info:hover {
+    padding: 0.8rem;
+  }
+  
+  button {
+    padding: 1em 2em;
+    font-size: 1.1em;
+  }
+}
