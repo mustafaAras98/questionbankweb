@@ -12,9 +12,9 @@ function App() {
   }
 
   function redirectUser() {
-    const deepLink = `questionbank://app${path}`;
+    const deepLink = `https://questionbankwebhost.firebaseapp.com${path}`;
     const playStore =
-      "https://play.google.com/store/apps/details?id=pdf.tap.scanner";
+      "https://play.google.com/store/apps/details?id=com.questionbank";
 
     const os = getMobileOS();
 
