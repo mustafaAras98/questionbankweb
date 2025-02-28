@@ -1,7 +1,34 @@
+import { useEffect } from "react";
 import "./App.css";
 import questionBankLogo from "/QuestionbankLogo.png";
 
 function App() {
+  const path = window.location.pathname;
+
+  function getMobileOS() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/android/i.test(userAgent)) return "Android";
+    return "unknown";
+  }
+
+  function redirectUser() {
+    const deepLink = `questionbank://app${path}`;
+    const playStore =
+      "https://play.google.com/store/apps/details?id=pdf.tap.scanner";
+
+    const os = getMobileOS();
+
+    if (os === "Android") {
+      window.location.href = deepLink;
+      setTimeout(() => {
+        window.location.href = playStore;
+      }, 1500);
+    }
+  }
+
+  useEffect(() => {
+    redirectUser();
+  });
   return (
     <>
       <div>
