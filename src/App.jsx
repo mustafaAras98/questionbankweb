@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./App.css";
 import questionBankLogo from "/QuestionbankLogo.png";
 
 function App() {
+  const hasRedirected = useRef(false);
   const path = window.location.pathname;
 
   function getMobileOS() {
@@ -12,12 +13,13 @@ function App() {
   }
 
   function redirectUser() {
+    if (hasRedirected.current) return;
+    hasRedirected.current = true;
     const deepLink = `https://questionbankwebhost.firebaseapp.com${path}`;
     const playStore =
       "https://play.google.com/store/apps/details?id=com.questionbank";
 
     const os = getMobileOS();
-
     if (os === "Android") {
       window.location.href = deepLink;
       setTimeout(() => {
@@ -29,6 +31,7 @@ function App() {
   useEffect(() => {
     redirectUser();
   }, []);
+
   return (
     <>
       <div>
