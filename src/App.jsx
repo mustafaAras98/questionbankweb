@@ -35,13 +35,11 @@ function App() {
   return (
     <>
       <div>
-        <a href="" target="_blank">
           <img
             src={questionBankLogo}
             className="logo"
             alt="QuestionBank logo"
           />
-        </a>
       </div>
       <h1>QuestionBank</h1>
       <p className="info">
@@ -50,7 +48,12 @@ function App() {
         easily snap photos of incorrect exam questions and share them with their
         study groups
       </p>
-      <button onClick={() => console.log("Go to AppStore")}>
+      <button
+        onClick={() => {
+          window.location.href =
+            "https://play.google.com/store/apps/details?id=com.questionbank";
+        }}
+      >
         Download QuestionBank on Appstore
       </button>
     </>
