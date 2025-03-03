@@ -1,9 +1,11 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.questionbank",
-    "sha256_cert_fingerprints":
-    ["CD:11:88:CC:3A:3A:60:03:8D:0D:F1:98:12:E8:6A:44:65:C8:2E:C8:40:9C:BF:09:39:98:53:89:E2:3D:46:E9"]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.albumquestionbank",
+      "sha256_cert_fingerprints":
+        ["90:FA:81:77:CF:E2:DC:3C:D2:13:19:22:CF:9B:88:4F:B9:91:6C:C7:AA:9F:FF:48:10:8B:F4:C9:EE:A7:71:A1"]
+    }
   }
-}]
+]
