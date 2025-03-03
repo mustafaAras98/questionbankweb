@@ -23,18 +23,15 @@ function App() {
     function redirectUser() {
       const path = window.location.pathname;
       const pathSegments = path.split("/").filter(Boolean);
+      const deepLink = `https://www.questionbankwebhost.com${path}`;
 
       if (
         redirectArray.includes(pathSegments[0]) &&
         pathSegments.length === 2
       ) {
-        const playStore =
-          "https://play.google.com/store/apps/details?id=com.questionbank";
         const os = getMobileOS();
         if (os === "Android") {
-          setTimeout(() => {
-            window.location.href = playStore;
-          }, 1500);
+          window.location.href = deepLink;
         }
       }
     }
