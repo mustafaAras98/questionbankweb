@@ -23,7 +23,7 @@ function App() {
     function redirectUser() {
       const path = window.location.pathname;
       const pathSegments = path.split("/").filter(Boolean);
-      const deepLink = `https://www.questionbankwebhost.com${path}`;
+      const deepLink = `https://questionbankwebhost.web.app${path}`;
 
       if (
         redirectArray.includes(pathSegments[0]) &&
