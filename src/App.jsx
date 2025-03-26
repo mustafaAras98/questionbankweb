@@ -53,7 +53,7 @@ function App() {
       <button
         onClick={() => {
           window.location.href =
-            "https://play.google.com/store/apps/details?id=com.questionbank";
+            "https://play.google.com/store/apps/details?id=com.albumquestionbank";
         }}
       >
         Download QuestionBank on Play Store
