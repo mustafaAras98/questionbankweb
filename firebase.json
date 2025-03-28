@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/playstore",
+        "destination": "https://play.google.com/store/apps/details?id=com.albumquestionbank"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
